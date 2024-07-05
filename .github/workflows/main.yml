@@ -31,6 +31,5 @@ jobs:
 
       - name: Build with Maven
         run: |
-          mvn clean install -DskipTests
-          ls target
+          docker buildx build -t dbc-demo . && docker run --rm -it -p 3000:3000 dbc-demo
           
